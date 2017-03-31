@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  <% for(var i=0; i<pokemons.length; i++) {%>
+	<h3><%= pokemons[i].name %></h3>
+	
+	<ul class="pokemons">
+		<li>
+		  <span>ID: <%= pokemons[i].id %></span>
+		</li>
+		<li>
+		  <span>Name: <%= pokemons[i].name %></span>
+		</li>
+		<li>
+		  <span>Type 1:<%= pokemons[i].type1 %></span>
+		</li>
+		<li>	
+		  <span>Type 2:<%= pokemons[i].type2 %></span>
+		</li>
+		<li>	
+		  <span>Total: <%= pokemons[i].total %></span>
+		</li>
+		<li>	
+		  <span>HP: <%= pokemons[i].hp %></span>
+		</li>
+		<li>	
+		  <span>Attack: <%= pokemons[i].attack %></span>
+		</li>
+		<li>	
+		  <span>Defense: <%= pokemons[i].defense %></span>
+		</li>
+		<li>	
+		  <span>Speed Attak: <%= pokemons[i].speedAtk %></span>
+		</li>
+		<li>	
+		  <span>Speed Attak: <%= pokemons[i].speedDef %></span>
+		</li>
+		<li>	
+		  <span>Speed: <%= pokemons[i].speed %></span>
+		</li>
+		<li>	
+		  <span>Generation: <%= pokemons[i].generation %></span>
+		</li>
+		<li>	
+		  <span>Legendary: <%= pokemons[i].legendary %></span>
+		</li>
+		<li>	
+		  <span><img src="https://img.pokemondb.net/artwork/<%= pokemons[i].name.toLowerCase() %>.jpg" alt="Mountain View" style="width:304px;height:228px;"></span>
+		</li>
+	</ul>
+  <% } %>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

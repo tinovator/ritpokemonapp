@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <style>
+  body{
+	font: 14px;
+	}
+/*table {border-style: inset;}*/
+
+#divs{
+		 -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+	text-align: center;
+}
+
+
+form {
+  display:flex;
+  position:realtive;
+  margin:5px auto;
+  width:70%;
+  flex-direction:row;
+  box-shadow:
+   1px 1px 0 rgb(22, 160, 133),
+   2px 2px 0 rgb(22, 160, 133),
+   3px 3px 0 rgb(22, 160, 133),
+   4px 4px 0 rgb(22, 160, 133),
+   5px 5px 0 rgb(22, 160, 133),
+   6px 6px 0 rgb(22, 160, 133),
+   7px 7px 0 rgb(22, 160, 133)
+  ;
+}
+
+.btn {
+  display:block;
+  font:1.2em 'Montserrat Alternates';
+}
+
+input {
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid rgb(26, 188, 156);
+}
+
+.btn {
+  padding:0.6em 0.8em;
+  background-color:rgb(26, 188, 156);
+  font-family: Papyrus, fantasy;
+  font-weight: bold;
+}
+
+button{
+	background-color:#97dbcd;
+	 font:1.2em 'Montserrat Alternates';
+	 font-family: Papyrus, fantasy;
+	 font-weight: bold;
+}
+
+
+li {
+	border-style: ridge;
+	border-color: #97dbcd;
+	margin-right: 500px;
+	margin-left: 500px;
+	
+}
+
+span {
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	font-size: 18px;
+	line-height: 20px;
+	color: #788699;
+	font-family: 'Muli', sans-serif;
+}
+h3{
+	margin: 1em 0 0.5em 0;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	position: relative;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+	font-size: 22px;
+	line-height: 40px;
+	color: #355681;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(53,86,129, 0.3);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.shadow{
+		box-shadow: 10px 10px 5px #888888;
+}
+
+  </style>
+</head>
+<body>
+	<div id="divs">
+
+  <form action="/search" method="GET" id="carform">
+	<select name="by" form="carform">
+	  <option value="name">Name</option>
+	  <option value="id">ID</option>
+	</select>
+    <input type="text" placeholder="Search" name="query">
+    <button class = "btn" type="submit">Submit</button>
+  </form>
+  <table>
+  <tr>
+	<th></th>
+  </tr>
+  <% for(var i=0; i<pokemons.length; i++) {%>
+	<h3><%= pokemons[i].name %></h3>
+	<ul class="pokemons">
+		<li>
+		  <span>ID: <%= pokemons[i].id %></span>
+		</li>
+		<li>
+		  <span>Name: <%= pokemons[i].name %></span>
+		</li>
+		<li class = "shadow">	
+		  <span><img src="https://img.pokemondb.net/artwork/<%= pokemons[i].name.toLowerCase() %>.jpg" alt="Mountain View" style="width:304px;height:228px;"></span>
+		</li>
+	</ul>
+	<form action="/edit" method="GET">
+	<button type="submit" name="<%= pokemons[i].id %>">Submit</button>
+	</form>
+  <% } %>
+  </table>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
